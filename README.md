@@ -35,16 +35,7 @@ Automatically create Tidal playlists from 1001tracklists.com URLs with smart tra
    python SPEEDOPTIMIZED.py  # For fast processing
    # or
    python STABLESLOW.py      # For maximum track finding
-   ```## ✨ Features
-
-## Features
-- 🚀 **Two Speed Modes**: Fast processing or maximum track finding
-- 🎯 **Smart Track Matching**: Multiple search strategies with scoring
-- ⚡ **Rate Limiting**: Prevents API flooding and "data" errors  
-- 🔄 **Duplicate Removal**: Automatically removes duplicate tracks
-- 📝 **Interactive Setup**: Runtime playlist naming and configuration
-- 🛠️ **Flexible Config**: Support for both `.env` and `.ini` files
-
+   ```
 ## Dependencies
 
 - Python 3.6+
@@ -89,6 +80,13 @@ sudo apt-get install firefox-geckodriver
 pip install -r requirements.txt
 
 ```
+## Features
+- 🚀 **Two Speed Modes**: Fast processing or maximum track finding
+- 🎯 **Smart Track Matching**: Multiple search strategies with scoring
+- ⚡ **Rate Limiting**: Prevents API flooding and "data" errors  
+- 🔄 **Duplicate Removal**: Automatically removes duplicate tracks
+- 📝 **Interactive Setup**: Runtime playlist naming and configuration
+- 🛠️ **Flexible Config**: Support for both `.env` and `.ini` files
 
 ## Configuration
 
