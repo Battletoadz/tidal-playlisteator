@@ -118,16 +118,16 @@ urls = https://www.1001tracklists.com/tracklist/example1.html,https://www.1001tr
 
 ### Basic Usage (with configuration file)
 ```bash
-python dev.py
+python SPEEDOPTIMIZED.py
 ```
 ### Command Line Arguments
 You can override configuration file settings:
 ```bash
-python dev.py --playlist-name "" --tracklist-urls ""
+python SPEEDOPTIMIZED.py --playlist-name "" --tracklist-urls ""
 ```
 ### Create Sample Configuration Files
 ```bash
-python dev.py --create-config
+python SPEEDOPTIMIZED.py --create-config
 ```
 ### Options
 - `--client-id`
