@@ -5,16 +5,7 @@ Automatically create Tidal playlists from 1001tracklists.com URLs with smart tra
 [![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## ✨ Features
-
-- 🚀 **Two Speed Modes**: Fast processing or maximum track finding
-- 🎯 **Smart Track Matching**: Multiple search strategies with scoring
-- ⚡ **Rate Limiting**: Prevents API flooding and "data" errors  
-- 🔄 **Duplicate Removal**: Automatically removes duplicate tracks
-- 📝 **Interactive Setup**: Runtime playlist naming and configuration
-- 🛠️ **Flexible Config**: Support for both `.env` and `.ini` files
-
-## Usage and Install
+## Usage
 
 1. **Clone the repository**:
    ```bash
@@ -44,12 +35,21 @@ Automatically create Tidal playlists from 1001tracklists.com URLs with smart tra
    python SPEEDOPTIMIZED.py  # For fast processing
    # or
    python STABLESLOW.py      # For maximum track finding
-   ```
+   ```## ✨ Features
 
-## 📋 Requirements
+## Features
+- 🚀 **Two Speed Modes**: Fast processing or maximum track finding
+- 🎯 **Smart Track Matching**: Multiple search strategies with scoring
+- ⚡ **Rate Limiting**: Prevents API flooding and "data" errors  
+- 🔄 **Duplicate Removal**: Automatically removes duplicate tracks
+- 📝 **Interactive Setup**: Runtime playlist naming and configuration
+- 🛠️ **Flexible Config**: Support for both `.env` and `.ini` files
+
+## Dependencies
 
 - Python 3.6+
-- Firefox browser
+- Selenium 4.34
+- Firefox browser 
 - geckodriver (Firefox WebDriver)
 - Tidal subscription and API credentials
 
@@ -57,6 +57,12 @@ Automatically create Tidal playlists from 1001tracklists.com URLs with smart tra
 
 ### 1. Install geckodriver
 ```bash
+
+# Arch Linux
+sudo pacman -S geckodriver"
+   #or optionally build git branch with AUR
+   # yay -S geckodriver-git
+
 # macOS with Homebrew
 brew install geckodriver
 
@@ -65,6 +71,7 @@ sudo apt-get install firefox-geckodriver
 
 # Windows - Download from: https://github.com/mozilla/geckodriver/releases
 # Extract to a folder in your PATH
+
 ```
 
 ### 2. Get Tidal API Credentials
@@ -73,16 +80,21 @@ sudo apt-get install firefox-geckodriver
 3. Create a new application  
 4. Copy your **Client ID** and **Client Secret**
 
-### 3. Install Python Dependencies
+### 3. Install Python modules
+
 ```bash
+# Really only necessary to explicitly install tidalapi, selenium, and python-dotenv.
+# other modules are usually automatic
+
 pip install -r requirements.txt
+
 ```
 
 ## Configuration
 
-The script supports both `.env` and `.ini` configuration files. Choose one method:
+script supports both `.env` and `.ini` 
 
-### Option 1: Using conf.env (recommended)
+### Option 1(recommended): Using conf.env 
 
 Edit your existing `conf.env` file:
 
