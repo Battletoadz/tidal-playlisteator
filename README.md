@@ -14,7 +14,7 @@ Automatically create Tidal playlists from 1001tracklists.com URLs with smart tra
 - 📝 **Interactive Setup**: Runtime playlist naming and configuration
 - 🛠️ **Flexible Config**: Support for both `.env` and `.ini` files
 
-## 🚀 Quick Start
+## Usage and Install
 
 1. **Clone the repository**:
    ```bash
