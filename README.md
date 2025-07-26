@@ -117,10 +117,9 @@ nano conf.env  # or use any text editor
 - 🛠️ **Flexible Config**: Support for both `.env` and `.ini` files
 
 ## Configuration
+supports env and ini
 
-script supports both `.env` and `.ini` 
-
-### Option 1(recommended): Using conf.env 
+### Using conf.env (recommended)
 
 Edit your existing `conf.env` file:
 
@@ -130,11 +129,8 @@ TIDAL_CLIENT_SECRET=your_actual_client_secret
 PLAYLIST_NAME=My Awesome Playlist
 TRACKLIST_URLS=https://www.1001tracklists.com/tracklist/example1.html,https://www.1001tracklists.com/tracklist/example2.html
 ```
-
-### Option 2: Using conf.ini
-
+### Using conf.ini
 Edit the `conf.ini` file:
-
 ```ini
 [tidal]
 client_id = your_actual_client_id
@@ -144,50 +140,22 @@ playlist_name = 'My Awesome Playlist'
 # comma seperated list of URLs
 urls = https://www.1001tracklists.com/tracklist/example1.html,https://www.1001tracklists.com/tracklist/example2.html
 ```
-
-## 🎛️ Available Versions
-
-### ⚡ SPEEDOPTIMIZED.py (Recommended)
-- **Faster processing**: ~40% faster than stable version
-- **Reduced delays**: 0.1-0.2s between requests
-- **Higher match threshold**: 40% confidence for faster decisions
-- **Best for**: Popular tracks, large playlists, when speed matters
-
-### 🐌 STABLESLOW.py (Maximum Coverage)
-- **Maximum track finding**: More thorough search strategies
-- **Conservative delays**: 0.5-2s between requests  
-- **Lower match threshold**: 30% confidence for broader matching
-- **Best for**: Obscure tracks, small playlists, when quality > speed
-
 ## Usage
 
 ### Basic Usage (with configuration file)
-
 ```bash
 python dev.py
 ```
-
 ### Command Line Arguments
-
 You can override configuration file settings:
-
 ```bash
-python dev.py --playlist-name "My Custom Playlist" --tracklist-urls https://www.1001tracklists.com/tracklist/example.html
+python dev.py --playlist-name "" --tracklist-urls ""
 ```
-
-### Show Browser Window (for debugging)
-
-```bash
-python dev.py --no-headless
-```
-
 ### Create Sample Configuration Files
-
 ```bash
 python dev.py --create-config
 ```
-
-## Options
+### Options
 - `--client-id`
 - `--client-secret`
 - `--playlist-name`
@@ -195,34 +163,27 @@ python dev.py --create-config
 - `--config-file`
 - `--create-config`
 - `--no-headless`
-- 
-## How It Works
-1. **Scraping**: The script uses Selenium to scrape track information from 1001tracklists.com
-2. **Deduplication**: Removes duplicate tracks based on artist and title
-3. **Tidal Integration**: Authenticates with Tidal using OAuth
-4. **Playlist Creation**: Searches for each track on Tidal and adds found tracks to a new playlist
-
-## Troubleshooting
+## Help
 - **Rate limiting**: If you get "data" errors, use `STABLESLOW.py` for more conservative timing
-- 
 - Make sure Firefox is installed
 - Ensure geckodriver is in your PATH
 - Try running with `--no-headless` to see what's happening
-
 ### Tidal 
 - Verify your Client ID and Client Secret are correct
 - Make sure you complete the OAuth flow in your browser
 - Check that your Tidal account has playlist creation permissions
-
 ### Track Not Found
 - Some tracks may not be available on Tidal
 - Track matching is done by searching "Artist - Title"
-  
-## 💡 Tips & Tricks
 - **Rate limiting**: If you get "data" errors, use `STABLESLOW.py` for more conservative timing
 - **Headless**: Run with arg --no-headless for debug info
 - **Multiple tracklists**: The script automatically removes duplicates across all URLs
 - **Retry failed tracks**: Run the script multiple times - different search strategies may find previously missed tracks
+##### How It Works
+1. **Scrape**The script uses Selenium to scrape track information from 1001tracklists.com
+2. **Deduplication**: Removes duplicate tracks based on artist and title
+3. **Tidal Integration**: Authenticates with Tidal using OAuth
+4. **Playlist Creation**: Searches for each track on Tidal and adds found tracks to a new playlist
 
 ## Driver's License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
