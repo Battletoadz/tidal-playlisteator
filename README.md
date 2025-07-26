@@ -164,6 +164,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## ⚠️ Disclaimer
 Please don't break the law. This tool is for personal use only. Respect all documentation for the applied APIs. 
+
 Script uses sensitive cryptographic keys and stores them in local files for operation so USE WITH CAUTION. you've been warned.
 
 ## Links
