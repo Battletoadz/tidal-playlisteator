@@ -2,39 +2,15 @@
 
 Automatically create Tidal playlists from 1001tracklists.com URLs with smart track matching and rate limiting.
 
-[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-## Usage
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/tidal-playlisteator.git
-   cd tidal-playlisteator
-   ```
-
-2. **Set up virtual environment**:
-   ```bash
-   python -m venv .
-   source bin/activate  # On Windows: bin/activate.bat
-   ```
-
-3. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure your credentials**:
-   ```bash
-   cp sample.env conf.env
-   # Edit conf.env with your Tidal API credentials and tracklist URLs
-   ```
-
-5. **Run the script**:
-   ```bash
+  ```bash
    python SPEEDOPTIMIZED.py  # For fast processing
    # or
    python STABLESLOW.py      # For maximum track finding
    ```
+
+[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Dependencies
 - Python 3.6+
 - Selenium 4.34
@@ -42,7 +18,7 @@ Automatically create Tidal playlists from 1001tracklists.com URLs with smart tra
 - geckodriver (Firefox WebDriver)
 - Tidal subscription and API credentials
 
-## 🔧 Installation
+## Installation
 
 ### 1. Install geckodriver
 ```bash
@@ -76,9 +52,7 @@ sudo apt-get install firefox-geckodriver
 # other modules are usually automatic
 
 pip install -r requirements.txt
-
 ```
-
 ## Alternatively: Build from source
 
 ### Clone
@@ -173,7 +147,7 @@ python dev.py --create-config
 - Make sure you complete the OAuth flow in your browser
 - Check that your Tidal account has playlist creation permissions
 ### Track Not Found
-- Some tracks may not be available on Tidal
+- Some tracks may not be available on Tidalheadless
 - Track matching is done by searching "Artist - Title"
 - **Rate limiting**: If you get "data" errors, use `STABLESLOW.py` for more conservative timing
 - **Headless**: Run with arg --no-headless for debug info
