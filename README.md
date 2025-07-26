@@ -80,6 +80,36 @@ sudo apt-get install firefox-geckodriver
 pip install -r requirements.txt
 
 ```
+
+## Alternatively: Build from source
+
+### Clone
+```bash
+git clone https://github.com/Battletoadz/tidal-playlisteator.git
+cd tidal-playlisteator
+```
+### Create your python env and enable
+```bash
+#installing python modules globally can really mess with you and is not recommended
+python -m venv ~/$yourfolder
+
+source ~/../bin/activate
+```
+### install python modules
+```bash
+pip install -r requirements.txt
+```
+### configure and run
+```bash
+# Copy the sample config
+cp sample.env conf.env
+
+# Edit conf.env with your details:
+# - Get Tidal API credentials from: https://developer.tidal.com/
+# - Add your 1001tracklists.com URLs
+nano conf.env  # or use any text editor
+```
+
 ## Features
 - 🚀 **Two Speed Modes**: Fast processing or maximum track finding
 - 🎯 **Smart Track Matching**: Multiple search strategies with scoring
