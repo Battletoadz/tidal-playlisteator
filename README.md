@@ -6,7 +6,6 @@ Automatically create Tidal playlists from 1001tracklists.com URLs with smart tra
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Usage
-
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/YOUR_USERNAME/tidal-playlisteator.git
@@ -37,7 +36,6 @@ Automatically create Tidal playlists from 1001tracklists.com URLs with smart tra
    python STABLESLOW.py      # For maximum track finding
    ```
 ## Dependencies
-
 - Python 3.6+
 - Selenium 4.34
 - Firefox browser 
@@ -141,9 +139,9 @@ Edit the `conf.ini` file:
 [tidal]
 client_id = your_actual_client_id
 client_secret = your_actual_client_secret
-playlist_name = My Awesome Playlist
-
+playlist_name = 'My Awesome Playlist'
 [tracklists]
+# comma seperated list of URLs
 urls = https://www.1001tracklists.com/tracklist/example1.html,https://www.1001tracklists.com/tracklist/example2.html
 ```
 
@@ -189,115 +187,51 @@ python dev.py --no-headless
 python dev.py --create-config
 ```
 
-## Available Options
-
-- `--client-id`: Tidal Client ID
-- `--client-secret`: Tidal Client Secret  
-- `--playlist-name`: Name for the Tidal playlist
-- `--tracklist-urls`: Space-separated list of 1001tracklists URLs
-- `--config-file`: Path to custom configuration file
-- `--create-config`: Generate sample configuration files
-- `--no-headless`: Show browser window (useful for debugging)
-
+## Options
+- `--client-id`
+- `--client-secret`
+- `--playlist-name`
+- `--tracklist-urls`
+- `--config-file`
+- `--create-config`
+- `--no-headless`
+- 
 ## How It Works
-
 1. **Scraping**: The script uses Selenium to scrape track information from 1001tracklists.com
 2. **Deduplication**: Removes duplicate tracks based on artist and title
 3. **Tidal Integration**: Authenticates with Tidal using OAuth
 4. **Playlist Creation**: Searches for each track on Tidal and adds found tracks to a new playlist
 
 ## Troubleshooting
-
-### Browser Issues
-
+- **Rate limiting**: If you get "data" errors, use `STABLESLOW.py` for more conservative timing
+- 
 - Make sure Firefox is installed
 - Ensure geckodriver is in your PATH
 - Try running with `--no-headless` to see what's happening
 
-### Tidal Authentication
-
+### Tidal 
 - Verify your Client ID and Client Secret are correct
 - Make sure you complete the OAuth flow in your browser
 - Check that your Tidal account has playlist creation permissions
 
 ### Track Not Found
-
 - Some tracks may not be available on Tidal
-- The script will report which tracks couldn't be found
 - Track matching is done by searching "Artist - Title"
-
-## 📊 Example Output
-
-```bash
-$ python SPEEDOPTIMIZED.py
-
-Configuration loaded:
-- Playlist name: Deep House Mix 2025
-- Tracklist URLs: 3
-
-Current playlist name: 'Deep House Mix 2025'
-Press Enter to keep, or type new name: 
-
-Scraping: https://www.1001tracklists.com/tracklist/example1.html
-Found 45 tracks
-Scraping: https://www.1001tracklists.com/tracklist/example2.html  
-Found 38 tracks
-Scraping: https://www.1001tracklists.com/tracklist/example3.html
-Found 52 tracks
-
-Total tracks found: 135
-Unique tracks: 118
-
-Please log in to Tidal in your browser...
-Visit https://link.tidal.com/XXXXX to log in...
-
-Processing track 1/118: Kx5 ft. HAYLA - Escape(Spencer Brown Remix)
-  Searching: 'Kx5 ft. HAYLA Escape(Spencer Brown Remix)'
-    Found 3 results
-✓ Added: Kx5 ft. HAYLA - Escape(Spencer Brown Remix) -> Escape (Spencer Brown Remix) (score: 0.85)
-
-Processing track 2/118: Jamie Jones & The Martinez Brothers - Bappi
-  Searching: '"Jamie Jones & The Martinez Brothers" "Bappi"'
-    Found 1 results
-✓ Added: Jamie Jones & The Martinez Brothers - Bappi -> Bappi (score: 0.90)
-
-...
-
-Playlist created: Deep House Mix 2025
-Tracks added: 89
-Tracks not found: 29
-Playlist creation completed successfully!
-```
-
+  
 ## 💡 Tips & Tricks
-
-- **Use descriptive playlist names** to organize your music library
-- **Multiple tracklists**: The script automatically removes duplicates across all URLs
-- **Missing tracks**: Some tracks may not be available on Tidal due to licensing
-- **Retry failed tracks**: Run the script multiple times - different search strategies may find previously missed tracks
 - **Rate limiting**: If you get "data" errors, use `STABLESLOW.py` for more conservative timing
-- **Large playlists**: For 100+ tracks, consider running during off-peak hours
+- **Headless**: Run with arg --no-headless for debug info
+- **Multiple tracklists**: The script automatically removes duplicates across all URLs
+- **Retry failed tracks**: Run the script multiple times - different search strategies may find previously missed tracks
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
+## Driver's License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## ⚠️ Disclaimer
+Please don't break the law. This tool is for personal use only. Respect all documentation for the applied APIs. 
+Script uses sensitive cryptographic keys and stores them in local files for operation so USE WITH CAUTION. you've been warned.
 
-This tool is for personal use only. Please respect Tidal's Terms of Service and 1001tracklists.com's robots.txt. The developers are not responsible for any misuse of this software.
-
-## 🙏 Acknowledgments
-
+## Links
 - [tidalapi](https://github.com/tamland/python-tidal) - Python library for Tidal API
 - [Selenium](https://selenium.dev/) - Web scraping framework
 - [1001tracklists.com](https://1001tracklists.com/) - DJ tracklist database
